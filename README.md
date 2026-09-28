@@ -144,7 +144,7 @@ The following screenshots document the key stages and results of the AWS Config 
 
 ### Initial Assessment
 
-01 — Initial Compliance Dashboard
+[01—initial-compliance-dashboard.png](evidence/01-initial-compliance-dashboard.png)
 
 View Initial Compliance Dashboard
 
