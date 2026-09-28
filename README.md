@@ -113,15 +113,12 @@ After remediation, the AWS Config rules were re-evaluated.
 
 ### Final Compliance Result
 
-| Metric | Result
-| Compliant Rules |
-4 |
-| Non-Compliant Rules |
-0 |
-| Compliant Resources |
-5 |
-| Non-Compliant Resources |
-0 |
+| Metric | Result |
+|---|---:|
+| Compliant Rules | **4** |
+| Non-Compliant Rules | **0** |
+| Compliant Resources | **5** |
+| Non-Compliant Resources | **0** |
 
 The environment achieved full compliance with all four configured AWS Config rules.
 
