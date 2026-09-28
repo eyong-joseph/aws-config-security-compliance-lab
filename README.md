@@ -1,87 +1,132 @@
-# AWS Config Security Compliane Lab
+# AWS Config Security Compliance Lab
+
 ## Overview
-This project demonstrates a hands-on AWS security compliance assessment using AWS Config to identify, investigate, remediate, and verify cloud security configuration issues
+
+This project demonstrates a hands-on AWS security compliance assessment using AWS Config to identify, investigate, remediate, and verify cloud security configuration issues.
+
 The lab focused on IAM password security and EC2 security group configurations.
+
 ## Objectives
+
 - Configure AWS Config
-- Impliment AWS Config managed rules
+- Implement AWS Config managed rules
 - Identify non-compliant resources
 - Investigate security findings
 - Remediate security configuration issues
 - Re-evaluate AWS Config rules
 - Verify the final compliance status
+
 ## AWS Services Used
+
 - AWS Config
 - AWS Identity and Access Management (IAM)
 - Amazon EC2
 - EC2 Security Groups
 - Amazon S3
+
 ## AWS Config Rules
+
 The following managed rules were configured:
-1. `iam-password-policy`
-2. `restricted-common-ports`
-3. `restricted-ssh`
-4. `s3-bucket-public-read-prohibited`
+
+1. iam-password-policy
+
+2. restricted-common-ports
+
+3. restricted-ssh
+
+4. s3-bucket-public-read-prohibited
+
 ## Initial Security Findings
+
 ### 1. IAM Password Policy
+
 The AWS account was initially using the default IAM password policy.
+
 The default configuration included:
+
 - Minimum password length: 8 characters
 - Passwords never expired
 - Only three of four character types were required
-Aws Config therefore reported the account as **NON_COMPLIANT**
+
+AWS Config therefore reported the account as NON_COMPLIANT.
+
 ### 2. Restricted Common Ports
+
 AWS Config identified an unrestricted inbound RDP rule:
+
 - Protocol: TCP
 - Port: 3389
-- Source: `0.0.0.0/0`
+- Source: 0.0.0.0/0
+
 This exposed RDP to the public internet.
+
 ### 3. Restricted SSH
+
 AWS Config identified an unrestricted inbound SSH rule:
+
 - Protocol: TCP
 - Port: 22
-- Source: `0.0.0.0/0`
+- Source: 0.0.0.0/0
+
 This exposed SSH to the public internet.
+
 ### 4. S3 Public Read
-The `s3-bucket-public-read-prohibited` rule was compliant.
+
+The s3-bucket-public-read-prohibited rule was compliant.
+
 ## Remediation
+
 ### IAM Password Policy
+
 The default password policy was replaced with a customized security policy.
+
 The following controls were enabled:
+
 - Minimum password length: 14 characters
 - Uppercase characters required
 - Lowercase characters required
 - Numbers required
 - Non-alphanumeric characters required
 - Password expiration: 90 days
-- Password reuse prevention: 24 previous paswwords
+- Password reuse prevention: 24 previous passwords
 - Users allowed to change their own passwords
+
 ### RDP Security
+
 The unrestricted RDP rule was changed from:
-`0.0.0.0/0`
-to a restricted source using the administrator's IP address.
+
+0.0.0.0/0
+
+to a restricted source using the authorized administrator IP address.
+
 ### SSH Security
+
 The unrestricted SSH rule was changed from:
-`0.0.0.0/0`
-to a restricted source using the administrator's IP address.
+
+0.0.0.0/0
+
+to a restricted source using the authorized administrator IP address.
+
 ## Verification
+
 After remediation, the AWS Config rules were re-evaluated.
+
 ### Final Compliance Result
-- **4 compliant rules**
-- **0 non-compliant rules**
-- **5 compliant resources**
-- **0 non-compliant resources**
+
+| Metric | Result
+| Compliant Rules |
+4 |
+| Non-Compliant Rules |
+0 |
+| Compliant Resources |
+5 |
+| Non-Compliant Resources |
+0 |
 
 The environment achieved full compliance with all four configured AWS Config rules.
-## Security Lessons Learned
-This lab demonstrated that:
-- AWS Config can continiously evaluate AWS resource configurations.
-- Security misconfigurations can exist even when services are functioning normally.
-- SSH and RDP should not be unnecessarily exposed to the entire internet.
-- Strong IAM password policies improves account security.
-- Security remediation should always be followed by re-evaluation.
-- Compliance monitoring is an important part of cloud security operations.
-# Security Workflow
+
+## Security Workflow
+
 ```text
 Configure
    ↓
@@ -95,8 +140,70 @@ Re-evaluate
    ↓
 Verify
 ```
-Project Outcome
+
+## Evidence / Screenshots
+
+The following screenshots document the key stages and results of the AWS Config security compliance lab.
+
+### Initial Assessment
+
+01 — Initial Compliance Dashboard
+
+View Initial Compliance Dashboard
+
+02 — Config Rules Initial Status
+
+View Config Rules Initial Status
+
+### Investigation
+
+03 — IAM Password Policy: Initial State
+
+View Initial IAM Password Policy
+
+04 — RDP 3389: Initial Vulnerability
+
+View Initial RDP 3389 Finding
+
+05 — SSH 22: Initial Vulnerability
+
+View Initial SSH 22 Finding
+
+### Remediation
+
+06 — RDP 3389: Remediated
+
+View RDP 3389 Remediation
+
+07 — SSH 22: Remediated
+
+View SSH 22 Remediation
+
+08 — IAM Password Policy: Remediated
+
+View Remediated IAM Password Policy
+
+### Final Verification
+
+09 — Final Compliance Dashboard
+
+View Final Compliance Dashboard
+
+## Security Lessons Learned
+
+This lab demonstrated that:
+
+- AWS Config can continuously evaluate AWS resource configurations.
+- Security misconfigurations can exist even when services are functioning normally.
+- SSH and RDP should not be unnecessarily exposed to the entire internet.
+- Strong IAM password policies improve account security.
+- Security remediation should always be followed by re-evaluation.
+- Compliance monitoring is an important part of cloud security operations.
+
+## Project Outcome
+
 The lab successfully demonstrated practical skills in:
+
 - Cloud security
 - AWS Config
 - IAM security
@@ -105,31 +212,8 @@ The lab successfully demonstrated practical skills in:
 - Security remediation
 - Configuration assessment
 
-## Evidence / Screenshots
-
-The following screenshots document the key stages and results of the AWS Config security compliance lab
-
-[Initial Compliance Dashboard.png](evidence/01-initial-compliance-dashboard.png)
-
-[Config Rule Initial Status.png](evidence/02-config-rules-initial-status.png)
-
-[IAM Password Policy - Initial.png](evidence/03-iam-password-policy-initial.png)
-
-[RDP 3389 Initial Vulnerability.png](evidence/04-rdp-3389-initial-vulnerability.png)
-
-[SSH 22 Initial Vulnerability.png](evidence/05-ssh-22-initial-vulnerability.png)
-
-[RDP 3389 Remediated.png](evidence/06-rdp-3389-remediated.png)
-
-[SSH 22 Remediated.png](evidence/07-ssh-22-remediated.png)
-
-[IAM Password Policy Remediated.png](evidence/08-iam-password-policy-remediated.png)
-
-[Final Compliance Dashboard](evidence/09-final-compliance-dashboard.png)
-
-
-Security Disclaimer
+## Security Disclaimer
 
 This project was performed in an authorized AWS lab environment for cybersecurity learning and portfolio development.
-
 No passwords, access keys, or other sensitive credentials are included in this repository.
+
