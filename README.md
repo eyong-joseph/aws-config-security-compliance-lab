@@ -144,45 +144,45 @@ The following screenshots document the key stages and results of the AWS Config 
 
 ### Initial Assessment
 
-[01—initial-compliance-dashboard.png](evidence/01-initial-compliance-dashboard.png)
+[01-initial-compliance-dashboard.png](evidence/01-initial-compliance-dashboard.png)
 
 View Initial Compliance Dashboard
 
-02 — Config Rules Initial Status
+[02-config-rules-initial-status.png](evidence/02-config-rules-initial-status.png)
 
 View Config Rules Initial Status
 
 ### Investigation
 
-03 — IAM Password Policy: Initial State
+[03-iam-password-policy-initial-state.png](evidence/03-iam-password-policy-initial-state.png)
 
 View Initial IAM Password Policy
 
-04 — RDP 3389: Initial Vulnerability
+[04-rdp-3389-initial-vulnerability.png](evidence/04-rdp-3389-initial-vulnerability.png)
 
 View Initial RDP 3389 Finding
 
-05 — SSH 22: Initial Vulnerability
+[05-ssh-22-initial-vulnerability.png](evidence/05-ssh-22-initial-vulnerability.png)
 
 View Initial SSH 22 Finding
 
 ### Remediation
 
-06 — RDP 3389: Remediated
+[06-rdp-3389-remediated.png](evidence/06-rdp-3389-remediated.png)
 
 View RDP 3389 Remediation
 
-07 — SSH 22: Remediated
+[07-ssh-22-remediated.png](evidence/07-ssh-22-remediated.png)
 
 View SSH 22 Remediation
 
-08 — IAM Password Policy: Remediated
+[08-iam-password-policy-remediated.png](evidence/08-iam-password-policy-remediated.png)
 
 View Remediated IAM Password Policy
 
 ### Final Verification
 
-09 — Final Compliance Dashboard
+[09-final-compliance-dashboard.png](evidence/09-final-compliance-dashboard.png)
 
 View Final Compliance Dashboard
 
