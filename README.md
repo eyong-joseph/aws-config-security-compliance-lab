@@ -108,14 +108,22 @@ The lab successfully demonstrated practical skills in:
 ## Evidence / Screenshots
 The following screenshots document the key stages and results of the AWS Config security compliance lab
 
-[Initial Compliance Dashboard](evidence/01-initial-compliance-dashboard.png)
-[Config Rule Initial Status](evidence/02-config-rules-initial-status.png)
-[IAM Password Policy - Initial](evidence/03-iam-password-policy-initial.png)
-[RDP 3389 Initial Vulnerability](evidence/04-rdp-3389-initial-vulnerability.png)
-[SSH 22 Initial Vulnerability](evidence/05-ssh-22-initial-vulnerability.png)
-[RDP 3389 Remediated](evidence/06-rdp-3389-remediated.png)
-[SSH 22 Remediated](evidence/07-ssh-22-remediated.png)
-[IAM Password Policy Remediated](evidence/08-iam-password-policy-remediated.png)
+[Initial Compliance Dashboard.png](evidence/01-initial-compliance-dashboard.png)
+
+[Config Rule Initial Status.png](evidence/02-config-rules-initial-status.png)
+
+[IAM Password Policy - Initial.png](evidence/03-iam-password-policy-initial.png)
+
+[RDP 3389 Initial Vulnerability.png](evidence/04-rdp-3389-initial-vulnerability.png)
+
+[SSH 22 Initial Vulnerability.png](evidence/05-ssh-22-initial-vulnerability.png)
+
+[RDP 3389 Remediated.png](evidence/06-rdp-3389-remediated.png)
+
+[SSH 22 Remediated.png](evidence/07-ssh-22-remediated.png)
+
+[IAM Password Policy Remediated.png](evidence/08-iam-password-policy-remediated.png)
+
 [Final Compliance Dashboard](evidence/09-final-compliance-dashboard.png)
 
 
